@@ -7,12 +7,11 @@ This repository implements the Annotation-Efficient Preference Optimization (AEP
 
 You can install aepo via pip.
 ```
-pip install -i https://test.pypi.org/simple/ aepo
+pip install XXX
 ```
 
-Source install is available too.
+Source install is available too. Clone this repository and run `pip install .`.
 ```
-git clone git@github.com:CyberAgentAILab/aepo.git
 cd aepo
 pip install .
 ```
