@@ -2,6 +2,7 @@
 
 This repository implements the Annotation-Efficient Preference Optimization (AEPO) algorithm.
 
+The code is tested on Ubuntu 20.04 using Python 3.9 and CUDA 11.0 (Docker image nvidia/cuda:11.0.3-cudnn8-devel-ubuntu20.04).
 
 ## Install
 

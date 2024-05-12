@@ -41,7 +41,7 @@ def aepo():
         ds2csv(ds, sample_dir=os.path.join(args.cache_dir, 'samples'), num_instructions=args.num_instructions, num_responses=args.num_responses)
     logging.info('done!')
     
-    logging.info('2. Computing DMBR...')
+    logging.info(f'2. Subsampling {args.num_annotations} responses out of {args.num_responses} using DMBR...')
     dmbr_result = run_mbr(sample_dir=os.path.join(args.cache_dir, 'samples'),
             matrix_dir=os.path.join(args.cache_dir, 'matrix'),
             dmbr_dir=os.path.join(args.cache_dir, 'dmbr'),
