@@ -12,7 +12,7 @@ pip install -i https://test.pypi.org/simple/ aepo
 
 Source install is available too.
 ```
-git clone CyberAgentAILab/aepo.git
+git clone git@github.com:CyberAgentAILab/aepo.git
 cd aepo
 pip install .
 ```
@@ -42,7 +42,7 @@ You can generate a pair of responses for each instruction using aepo using the f
 aepo dataset/alpaca_samples.csv --num_responses 8 --num_annotations 2 --num_instructions 10
 ```
 
-If you want to subsample four responses for e.g, LiPO, then set `--num_annotations` to four.
+If you want to subsample four responses for e.g, [LiPO](https://arxiv.org/abs/2402.01878v1), then set `--num_annotations` to four.
 
 ```
 aepo dataset/alpaca_samples.csv --num_responses 8 --num_annotations 4 --num_instructions 10
