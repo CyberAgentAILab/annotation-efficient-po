@@ -63,3 +63,11 @@ aepo dataset/alpaca_samples.csv --num_responses 8 --num_annotations 8 --num_inst
 ```
 
 This will pick the best and worst of the responses.
+
+
+## Reference
+
+XXX. Annotation-Efficient Preference Optimization for Language Model Alignment, 2024.
+
+## Contact
+For any questions, feel free to raise an issue or contact me at XXX.
