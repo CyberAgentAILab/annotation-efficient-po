@@ -13,7 +13,7 @@ pip install XXX
 
 Source install is available too. Clone this repository and run `pip install .`.
 ```
-cd aepo
+cd annotation-efficient-po
 pip install .
 ```
 
@@ -42,28 +42,28 @@ You can generate a pair of responses for each instruction using aepo using the f
 aepo dataset/alpaca_samples.csv --num_responses 8 --num_annotations 2 --num_instructions 10
 ```
 
-If you want to subsample four responses for e.g, [LiPO](https://arxiv.org/abs/2402.01878v1), then set `--num_annotations` to four.
+To subsample four responses for e.g., [LiPO](https://arxiv.org/abs/2402.01878v1), set `--num_annotations` to four.
 
 ```
 aepo dataset/alpaca_samples.csv --num_responses 8 --num_annotations 4 --num_instructions 10
 ```
 
 ### Example: Running West-of-N over 8 samples
-
-You can run West-of-N using this package simply by setting `--num_annotations` == `--num_responses`.
+[West-of-N](https://arxiv.org/abs/2401.12086) is a strategy to pick the Best-of-N as the chosen response, and Worst-of-N as a rejected response. It is shown to be effective for DPO and reward modeling.
+You can run West-of-N using this package by setting `--num_annotations` == `--num_responses`.
 
 ```
 aepo dataset/alpaca_samples.csv --num_responses 8 --num_annotations 8 --num_instructions 10
 ```
 
-This command will generate a dataset with 8 responses, ranked by the reward. If you only need the best and worst of the N samples, then use `--west_of_n` option.
+This command will generate a dataset with 8 responses, ranked by their rewards. If you only need the best and worst of the N samples, then use `--west_of_n` option.
 
 ```
 aepo dataset/alpaca_samples.csv --num_responses 8 --num_annotations 8 --num_instructions 10 --west_of_n
 ```
 
-This will pick the best and worst of the responses.
-
+This will pick the best and worst responses as the chosen and rejected. The rest of the responses are discarded.
+It would be useful to construct a pairwise preference dataset.
 
 ## Reference
 
