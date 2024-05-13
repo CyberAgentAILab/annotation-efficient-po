@@ -8,11 +8,12 @@ The code is tested on Ubuntu 20.04 using Python 3.9 and CUDA 11.0 (Docker image 
 
 You can install aepo via pip.
 ```
-pip install XXX
+pip install aepo
 ```
 
 Source install is available too. Clone this repository and run `pip install .`.
 ```
+git clone git@github.com:CyberAgentAILab/annotation-efficient-po.git
 cd annotation-efficient-po
 pip install .
 ```
@@ -67,7 +68,7 @@ It would be useful to construct a pairwise preference dataset.
 
 ## Reference
 
-XXX. Annotation-Efficient Preference Optimization for Language Model Alignment, 2024.
+TBA. Yuu Jinnai and Honda Ukyo. Annotation-Efficient Preference Optimization for Language Model Alignment, 2024.
 
 ## Contact
-For any questions, feel free to raise an issue or contact me at XXX.
+For any questions, feel free to raise an issue or contact me at jinnai_yu@cyberagent.co.jp.
