@@ -10,8 +10,18 @@ from aepo.mbr.utility_func import load_similarity
 from aepo.mbr.policy.mbr import compute_score_matrix
 from aepo.mbr.policy.diverse_mbr import compute_dmbr
 
-def run_mbr(sample_dir: str, matrix_dir: str, dmbr_dir: str, num_instructions: str, num_responses: str, 
-            sim: str, use_matrix_cache: bool, diverse_k: int, diversity_penalty: float):
+
+def run_mbr(
+    sample_dir: str,
+    matrix_dir: str,
+    dmbr_dir: str,
+    num_instructions: str,
+    num_responses: str,
+    sim: str,
+    use_matrix_cache: bool,
+    diverse_k: int,
+    diversity_penalty: float,
+):
     """Run the diverse MBR algorithm."""
     compute_similarity, sim_model = load_similarity(sim)
 
@@ -32,7 +42,7 @@ def run_mbr(sample_dir: str, matrix_dir: str, dmbr_dir: str, num_instructions: s
         df = pd.read_csv(os.path.join(sample_dir, filename))
 
         df = df[:num_responses]
-        hyp = df.iloc[:]['text']
+        hyp = df.iloc[:]["text"]
 
         matrix_filename = "{:06d}.npy".format(sample_id)
         matrix = None
@@ -49,17 +59,21 @@ def run_mbr(sample_dir: str, matrix_dir: str, dmbr_dir: str, num_instructions: s
         # Diverse MBR
         dmbr_bests = compute_dmbr(matrix=matrix, k=diverse_k, div_pen=diversity_penalty)
         # TODO: Add an option to report the stats
-        dmbr_hyps = df['text'].iloc[dmbr_bests].to_list()
+        dmbr_hyps = df["text"].iloc[dmbr_bests].to_list()
         # dmbr_stats = evaluate_diversity(dmbr_hyps, dmbr_scores, src_input, compute_pairwise)
-        row = [sample_id] + dmbr_bests.tolist() + dmbr_hyps # + dmbr_stats
+        row = [sample_id] + dmbr_bests.tolist() + dmbr_hyps  # + dmbr_stats
         rows.append(row)
 
-    columns = ['sample_id'] + [f"id_{i}" for i in range(diverse_k)] + [f"text_{i}" for i in range(diverse_k)]
-    
+    columns = (
+        ["sample_id"]
+        + [f"id_{i}" for i in range(diverse_k)]
+        + [f"text_{i}" for i in range(diverse_k)]
+    )
+
     # print('columns: ', columns)
     # print('rows', rows)
     df = pd.DataFrame(rows, columns=columns)
-    
+
     result_filename = "k{:02d}_lambda{:.3f}.csv".format(diverse_k, diversity_penalty)
     df.to_csv(os.path.join(dmbr_dir, result_filename), index=False)
 
@@ -82,7 +96,7 @@ def run_mbr(sample_dir: str, matrix_dir: str, dmbr_dir: str, num_instructions: s
 #     model_name = args.model
 
 #     sample_dir = args.sample_dir
-    
+
 #     n_lines = args.n_lines
 #     n_samples = args.n_samples
 
@@ -97,7 +111,7 @@ def run_mbr(sample_dir: str, matrix_dir: str, dmbr_dir: str, num_instructions: s
 #     algorithm = args.algorithm
 #     recompute_matrix = args.recompute_matrix
 
-    
+
 #     diverse_k = args.diverse_k
 #     diversity_penalty = args.diversity_penalty
 #     pairwise_eval = args.pairwise_eval
