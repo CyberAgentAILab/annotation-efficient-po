@@ -19,7 +19,20 @@ def run_reward(
     west_of_n: bool,
     dmbr_result: pd.DataFrame,
 ) -> pd.DataFrame:
-    """Annotate the reward for the diverse MBR results."""
+    """
+    Args:
+        reward_model_id (str): the Huggingface Hub's repository name of the reward model.
+        instructions (List[str]): the list of instructions.
+        output_dir (str): the output directory.
+        output_filename (str): the output filename.
+        num_instructions (int): the number of instructions.
+        num_annotations (int): the number of annotations available per instruction.
+        west_of_n (bool): if true, output the best and worst of N samples instead of all annotated responses.
+        dmbr_result (pd.DataFrame): the diverse MBR results.
+    Returns:
+        pd.DataFrame: the annotation-efficient preference optimization dataset.
+    Annotate the reward for the responses selected by diverse MBR.
+    """
 
     reward_model = load_reward_model(reward_model_id)
 

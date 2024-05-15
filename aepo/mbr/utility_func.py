@@ -7,8 +7,15 @@ import torch.nn.functional as F
 from torch.nn.functional import cosine_similarity
 
 
-def load_similarity(sim: str):
-    """Load the similarity function."""
+def load_similarity(sim: str) -> callable:
+    """
+    Args:
+        sim (str): the name of the similarity function to load.
+    Returns:
+        callable: the similarity function.
+    Load the similarity function to be used for diverse MBR.
+    For the purpose of AEPO, we use Sentence BERT (sentbert).
+    """
     if sim == "bertscore":
         similarity = load(sim)
 

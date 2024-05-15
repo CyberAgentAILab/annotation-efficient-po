@@ -1,8 +1,16 @@
 import numpy as np
 
 
-def compute_score_matrix(samples, score_function, src_input=None):
-    """Compute the score matrix for a list of samples."""
+def compute_score_matrix(samples: list, score_function: callable, src_input: str=None) -> np.array:
+    """
+    Args:
+        samples (list): the list of samples.
+        score_function (callable): the score function.
+        src_input (str): the source input.
+    Returns:
+        np.array: the score matrix.
+    Compute the score matrix for a list of samples.
+    """
     n_samples = len(samples)
     scores = []
     for i in range(n_samples):
@@ -14,14 +22,25 @@ def compute_score_matrix(samples, score_function, src_input=None):
 
 
 def compute_mbr(
-    hyp=None,
-    compute_similatiy=None,
-    matrix=None,
-    weights=None,
-    src=None,
-    incremental=False,
+    hyp: list=None,
+    compute_similarity: callable=None,
+    matrix: np.array=None,
+    weights: list=None,
+    src: str=None,
+    incremental: bool=False,
 ):
-    """Compute the MBR."""
+    """
+    Args:
+        hyp (list): the list of hypotheses.
+        compute_similarity (callable): the similarity function.
+        matrix (np.array): the similarity matrix.
+        weights (list): the weights for the scoring function.
+        src (str): the source.
+        incremental (bool): the flag for incremental MBR.
+    Returns:
+        int: the best hypothesis index.
+    Compute the minimum bayes risk decoding.
+    """
     assert (compute_similatiy is not None) or (matrix is not None)
     if matrix is None:
         matrix = compute_score_matrix(hyp, compute_similarity, [src] * len(hyp))

@@ -15,7 +15,9 @@ import math
 
 
 class RewardModel:
-    """Base class for reward models."""
+    """
+    Base class for reward models.
+    """
 
     def __init__(self, reward_model_id):
         pass
@@ -222,16 +224,6 @@ class PairLM(RewardModel):
         logits = outputs.logits.tolist()
         return logits[0]
 
-    # def get_pairwise_rewards(self, question: str, answers: List[str]) -> np.ndarray:
-    #     logits_matrix = []
-    #     for answer in answers:
-    #         encodings = self.tokenize_pair([question] * len(answers), [answer] * len(answers), answers)
-    #         encodings = {k:v.to(self.pairrm.device) for k,v in encodings.items()}
-    #         outputs = self.pairrm(**encodings)
-    #         logits = outputs.logits.tolist()
-    #         logits_matrix.append(logits)
-    #     return np.array(logits_matrix)
-
 
 class GPTRewardModel(nn.Module):
     def __init__(self, model_path):
@@ -334,7 +326,11 @@ class Starling(RewardModel):
         return rewards
 
 
-def load_reward_model(reward_model_id):
+def load_reward_model(reward_model_id: str):
+    """
+    Currently it only supports the following reward models.
+    To add a new reward model, implement it in the RewardModel class.
+    """
     if reward_model_id == "OpenAssistant/reward-model-deberta-v3-large-v2":
         return OASST(reward_model_id)
     elif "stanfordnlp/SteamSHP" in reward_model_id:

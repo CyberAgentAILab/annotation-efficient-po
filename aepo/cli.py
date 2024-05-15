@@ -1,6 +1,7 @@
 import os
 import argparse
 import logging
+logging.addLevelName( logging.WARNING, "\033[1;31m%s\033[1;0m" % logging.getLevelName(logging.WARNING))
 
 from aepo.preprocess import read_dataset, ds2csv
 from aepo.mbr.mbr_engine import run_mbr
@@ -8,7 +9,13 @@ from aepo.mbr.reward_engine import run_reward
 
 
 def aepo():
-    """The main function for the AEPO command line interface."""
+    """
+    Args:
+        None
+    Returns:
+        None
+    The main function for the AEPO command line interface.
+    """
     parser = argparse.ArgumentParser(
         description="AEPO: A Python package for Annotation Efficient Preference Optimization."
     )
@@ -74,12 +81,14 @@ def aepo():
         default=None,
     )
     parser.add_argument(
-        "--use_sample_cache", action="store_true", help="use the cached sample dataset."
+        "--use_sample_cache", 
+        action="store_true", 
+        help="use the cached sample dataset stored in [cache_dir]/samples/{:6d}.csv"
     )
     parser.add_argument(
         "--use_matrix_cache",
         action="store_true",
-        help="use the cached similarity matrix.",
+        help="use the cached similarity matrix stored in [cache_dir]/matrix/{:6d}.npy.",
     )
     parser.add_argument("--debug", action="store_true", help="enable debug mode.")
 
@@ -89,6 +98,11 @@ def aepo():
         logging.basicConfig(level=logging.DEBUG)
     else:
         logging.basicConfig(level=logging.INFO)
+
+    logging.warning("\n\nDisclaimer: This code is not an official product and has been developed for research purposes.\n"
+        + "It is provided 'as is' without any guarantees or warranty.\n"
+        + "The author is not liable for any damages or losses of any kind caused by the use or misuse of the code.\n"
+        + "Use of the code is at your own risk and discretion.\n")
 
     logging.info("1. Preparing the sample dataset...")
     ds = read_dataset(args.dataset, args.split, access_token=args.access_token)
@@ -108,7 +122,7 @@ def aepo():
     logging.info("done!")
 
     logging.info(
-        f"2. Subsampling {args.num_annotations} responses out of {args.num_responses} using DMBR..."
+        f"2. Subsampling {args.num_annotations} responses out of {args.num_responses} using DMBR. Processing a large number of responses may take several minute..."
     )
     dmbr_result = run_mbr(
         sample_dir=os.path.join(args.cache_dir, "samples"),

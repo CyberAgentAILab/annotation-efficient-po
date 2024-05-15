@@ -21,8 +21,23 @@ def run_mbr(
     use_matrix_cache: bool,
     diverse_k: int,
     diversity_penalty: float,
-):
-    """Run the diverse MBR algorithm."""
+) -> pd.DataFrame:
+    """
+    Args:
+        sample_dir (str): the directory of the samples.
+        matrix_dir (str): the directory of the similarity matrices.
+        dmbr_dir (str): the directory of the diverse MBR results.
+        num_instructions (int): the number of instructions.
+        num_responses (int): the number of responses per instruction.
+        sim (str): the similarity model to use.
+        use_matrix_cache (bool): the flag to use the matrix cache.
+        diverse_k (int): the number responses to select by diverse MBR.
+        diversity_penalty (float): the diversity penalty lambda.
+    Returns:
+        pd.DataFrame: the diverse MBR results.
+    Run the diverse MBR algorithm.
+    See https://github.com/CyberAgentAILab/diverse-mbr for more details of diverse MBR.
+    """
     compute_similarity, sim_model = load_similarity(sim)
 
     os.makedirs(matrix_dir, exist_ok=True)
@@ -58,10 +73,8 @@ def run_mbr(
 
         # Diverse MBR
         dmbr_bests = compute_dmbr(matrix=matrix, k=diverse_k, div_pen=diversity_penalty)
-        # TODO: Add an option to report the stats
         dmbr_hyps = df["text"].iloc[dmbr_bests].to_list()
-        # dmbr_stats = evaluate_diversity(dmbr_hyps, dmbr_scores, src_input, compute_pairwise)
-        row = [sample_id] + dmbr_bests.tolist() + dmbr_hyps  # + dmbr_stats
+        row = [sample_id] + dmbr_bests.tolist() + dmbr_hyps
         rows.append(row)
 
     columns = (
@@ -70,8 +83,6 @@ def run_mbr(
         + [f"text_{i}" for i in range(diverse_k)]
     )
 
-    # print('columns: ', columns)
-    # print('rows', rows)
     df = pd.DataFrame(rows, columns=columns)
 
     result_filename = "k{:02d}_lambda{:.3f}.csv".format(diverse_k, diversity_penalty)
@@ -83,37 +94,3 @@ def run_mbr(
     torch.cuda.empty_cache()
 
     return df
-
-
-# if __name__ == "__main__":
-#     """
-#     This script is the "main function" of the experiment.
-#     """
-#     parser = get_mbr_parser()
-#     args = parser.parse_args()
-
-#     dataset = args.dataset
-#     model_name = args.model
-
-#     sample_dir = args.sample_dir
-
-#     n_lines = args.n_lines
-#     n_samples = args.n_samples
-
-#     epsilon = args.eps
-#     topk = args.topk
-#     topp = args.topp
-
-#     sim = args.sim
-#     eval_func = args.eval
-
-#     # Algorithm config
-#     algorithm = args.algorithm
-#     recompute_matrix = args.recompute_matrix
-
-
-#     diverse_k = args.diverse_k
-#     diversity_penalty = args.diversity_penalty
-#     pairwise_eval = args.pairwise_eval
-
-#     do_sample = args.do_sample > 0
