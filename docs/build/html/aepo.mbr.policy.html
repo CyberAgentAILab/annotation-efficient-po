@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aepo.mbr.policy package &mdash; aepo 2024.05.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=e97218b2"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aepo
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">aepo.mbr.policy package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-aepo.mbr.policy.diverse_mbr">aepo.mbr.policy.diverse_mbr module</a><ul>
+<li><a class="reference internal" href="#aepo.mbr.policy.diverse_mbr.compute_dmbr"><code class="docutils literal notranslate"><span class="pre">compute_dmbr()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.policy.diverse_mbr.gbfs"><code class="docutils literal notranslate"><span class="pre">gbfs()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.policy.diverse_mbr.generate_objective"><code class="docutils literal notranslate"><span class="pre">generate_objective()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.policy.diverse_mbr.local_search"><code class="docutils literal notranslate"><span class="pre">local_search()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-aepo.mbr.policy.mbr">aepo.mbr.policy.mbr module</a><ul>
+<li><a class="reference internal" href="#aepo.mbr.policy.mbr.compute_mbr"><code class="docutils literal notranslate"><span class="pre">compute_mbr()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.policy.mbr.compute_score_matrix"><code class="docutils literal notranslate"><span class="pre">compute_score_matrix()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-aepo.mbr.policy">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aepo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">aepo.mbr.policy package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/aepo.mbr.policy.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="aepo-mbr-policy-package">
+<h1>aepo.mbr.policy package<a class="headerlink" href="#aepo-mbr-policy-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-aepo.mbr.policy.diverse_mbr">
+<span id="aepo-mbr-policy-diverse-mbr-module"></span><h2>aepo.mbr.policy.diverse_mbr module<a class="headerlink" href="#module-aepo.mbr.policy.diverse_mbr" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.policy.diverse_mbr.compute_dmbr">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.policy.diverse_mbr.</span></span><span class="sig-name descname"><span class="pre">compute_dmbr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hyp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">div_pen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#aepo.mbr.policy.diverse_mbr.compute_dmbr" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hyp</strong> (<em>list</em>) – the list of hypotheses.</p></li>
+<li><p><strong>score_function</strong> (<em>callable</em>) – the scoring function.</p></li>
+<li><p><strong>matrix</strong> (<em>np.array</em>) – the similarity matrix.</p></li>
+<li><p><strong>weights</strong> (<em>list</em>) – the weights for the scoring function.</p></li>
+<li><p><strong>src</strong> (<em>str</em>) – the source.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – the number of elements to select.</p></li>
+<li><p><strong>div_pen</strong> (<em>float</em>) – the diversity penalty.</p></li>
+</ul>
+</dd>
+</dl>
+<p>Compute the diverse MBR.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.policy.diverse_mbr.gbfs">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.policy.diverse_mbr.</span></span><span class="sig-name descname"><span class="pre">gbfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#aepo.mbr.policy.diverse_mbr.gbfs" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>callable</em>) – the objective function.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – the number of elements.</p></li>
+<li><p><strong>k</strong> (<em>int</em>) – the number of elements to select.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the selected elements.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+<p>Greedy Best First Search for the diverse MBR.
+Greedy search is guaranteed to find a solution with an approximation factor of (1−1/e),
+provided that λ is small enough to ensure the function is non-decreasing;
+otherwise, the approximation factor is slightly worse than (1−1/e).
+Nemhauser, G. L., Wolsey, L. A., &amp; Fisher, M. L. (1978). An analysis of approximations for maximizing submodular set functions—I. Mathematical programming, 14, 265-294.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.policy.diverse_mbr.generate_objective">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.policy.diverse_mbr.</span></span><span class="sig-name descname"><span class="pre">generate_objective</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">div_pen</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">callable</span></span></span><a class="headerlink" href="#aepo.mbr.policy.diverse_mbr.generate_objective" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>k</strong> (<em>int</em>) – the number of elements to select.</p></li>
+<li><p><strong>div_pen</strong> (<em>float</em>) – the diversity penalty.</p></li>
+<li><p><strong>matrix</strong> (<em>np.array</em>) – the similarity matrix.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the objective function of the diverse MBR.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>callable</p>
+</dd>
+</dl>
+<p>Generate an objective function for the diverse MBR.
+See <a class="reference external" href="https://github.com/CyberAgentAILab/diverse-mbr/tree/master">https://github.com/CyberAgentAILab/diverse-mbr/tree/master</a> for more details of diverse MBR.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.policy.diverse_mbr.local_search">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.policy.diverse_mbr.</span></span><span class="sig-name descname"><span class="pre">local_search</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">iterations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neighbor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">2</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#aepo.mbr.policy.diverse_mbr.local_search" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>callable</em>) – the objective function.</p></li>
+<li><p><strong>init</strong> (<em>np.array</em>) – the initial solution.</p></li>
+<li><p><strong>iterations</strong> (<em>int</em>) – the number of iterations.</p></li>
+<li><p><strong>neighbor</strong> (<em>int</em>) – the number of neighbors to remove.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the selected elements.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+<p>Local search for the diverse MBR.
+This is an alternative to the greedy search.</p>
+</dd></dl>
+
+</section>
+<section id="module-aepo.mbr.policy.mbr">
+<span id="aepo-mbr-policy-mbr-module"></span><h2>aepo.mbr.policy.mbr module<a class="headerlink" href="#module-aepo.mbr.policy.mbr" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.policy.mbr.compute_mbr">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.policy.mbr.</span></span><span class="sig-name descname"><span class="pre">compute_mbr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">hyp</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compute_similarity</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">array</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weights</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">incremental</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.policy.mbr.compute_mbr" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>hyp</strong> (<em>list</em>) – the list of hypotheses.</p></li>
+<li><p><strong>compute_similarity</strong> (<em>callable</em>) – the similarity function.</p></li>
+<li><p><strong>matrix</strong> (<em>np.array</em>) – the similarity matrix.</p></li>
+<li><p><strong>weights</strong> (<em>list</em>) – the weights for the scoring function.</p></li>
+<li><p><strong>src</strong> (<em>str</em>) – the source.</p></li>
+<li><p><strong>incremental</strong> (<em>bool</em>) – the flag for incremental MBR.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the best hypothesis index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+<p>Compute the minimum bayes risk decoding.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.policy.mbr.compute_score_matrix">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.policy.mbr.</span></span><span class="sig-name descname"><span class="pre">compute_score_matrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">score_function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">src_input</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">array</span></span></span><a class="headerlink" href="#aepo.mbr.policy.mbr.compute_score_matrix" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>samples</strong> (<em>list</em>) – the list of samples.</p></li>
+<li><p><strong>score_function</strong> (<em>callable</em>) – the score function.</p></li>
+<li><p><strong>src_input</strong> (<em>str</em>) – the source input.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the score matrix.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>np.array</p>
+</dd>
+</dl>
+<p>Compute the score matrix for a list of samples.</p>
+</dd></dl>
+
+</section>
+<section id="module-aepo.mbr.policy">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-aepo.mbr.policy" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yuu Jinnai.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

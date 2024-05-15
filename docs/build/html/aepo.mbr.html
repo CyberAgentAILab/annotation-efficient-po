@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>aepo.mbr package &mdash; aepo 2024.05.15 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=92fd9be5" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=e97218b2"></script>
+        <script src="_static/doctools.js?v=9a2dae69"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            aepo
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">aepo.mbr package</a><ul>
+<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-aepo.mbr.mbr_engine">aepo.mbr.mbr_engine module</a><ul>
+<li><a class="reference internal" href="#aepo.mbr.mbr_engine.run_mbr"><code class="docutils literal notranslate"><span class="pre">run_mbr()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-aepo.mbr.reward_engine">aepo.mbr.reward_engine module</a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_engine.run_reward"><code class="docutils literal notranslate"><span class="pre">run_reward()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-aepo.mbr.reward_model">aepo.mbr.reward_model module</a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.Eurus"><code class="docutils literal notranslate"><span class="pre">Eurus</span></code></a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.Eurus.get_reward"><code class="docutils literal notranslate"><span class="pre">Eurus.get_reward()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.GPTRewardModel"><code class="docutils literal notranslate"><span class="pre">GPTRewardModel</span></code></a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.GPTRewardModel.forward"><code class="docutils literal notranslate"><span class="pre">GPTRewardModel.forward()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.GPTRewardModel.get_device"><code class="docutils literal notranslate"><span class="pre">GPTRewardModel.get_device()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.OASST"><code class="docutils literal notranslate"><span class="pre">OASST</span></code></a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.OASST.get_reward"><code class="docutils literal notranslate"><span class="pre">OASST.get_reward()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM"><code class="docutils literal notranslate"><span class="pre">PairLM</span></code></a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.get_pairwise_reward"><code class="docutils literal notranslate"><span class="pre">PairLM.get_pairwise_reward()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.get_reward"><code class="docutils literal notranslate"><span class="pre">PairLM.get_reward()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.get_rewards"><code class="docutils literal notranslate"><span class="pre">PairLM.get_rewards()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.get_winratio"><code class="docutils literal notranslate"><span class="pre">PairLM.get_winratio()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.tokenize_pair"><code class="docutils literal notranslate"><span class="pre">PairLM.tokenize_pair()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel"><code class="docutils literal notranslate"><span class="pre">RewardModel</span></code></a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel.get_pairwise_reward"><code class="docutils literal notranslate"><span class="pre">RewardModel.get_pairwise_reward()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel.get_pairwise_rewards"><code class="docutils literal notranslate"><span class="pre">RewardModel.get_pairwise_rewards()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel.get_reward"><code class="docutils literal notranslate"><span class="pre">RewardModel.get_reward()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel.get_rewards"><code class="docutils literal notranslate"><span class="pre">RewardModel.get_rewards()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.StanfordNLP"><code class="docutils literal notranslate"><span class="pre">StanfordNLP</span></code></a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.StanfordNLP.get_pairwise_reward"><code class="docutils literal notranslate"><span class="pre">StanfordNLP.get_pairwise_reward()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.StanfordNLP.get_reward"><code class="docutils literal notranslate"><span class="pre">StanfordNLP.get_reward()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.Starling"><code class="docutils literal notranslate"><span class="pre">Starling</span></code></a><ul>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.Starling.get_reward"><code class="docutils literal notranslate"><span class="pre">Starling.get_reward()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.Starling.get_reward_"><code class="docutils literal notranslate"><span class="pre">Starling.get_reward_()</span></code></a></li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.Starling.get_rewards"><code class="docutils literal notranslate"><span class="pre">Starling.get_rewards()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#aepo.mbr.reward_model.load_reward_model"><code class="docutils literal notranslate"><span class="pre">load_reward_model()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-aepo.mbr.utility_func">aepo.mbr.utility_func module</a><ul>
+<li><a class="reference internal" href="#aepo.mbr.utility_func.load_similarity"><code class="docutils literal notranslate"><span class="pre">load_similarity()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-aepo.mbr">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aepo</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">aepo.mbr package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/aepo.mbr.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="aepo-mbr-package">
+<h1>aepo.mbr package<a class="headerlink" href="#aepo-mbr-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="aepo.mbr.policy.html">aepo.mbr.policy package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aepo.mbr.policy.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aepo.mbr.policy.html#module-aepo.mbr.policy.diverse_mbr">aepo.mbr.policy.diverse_mbr module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aepo.mbr.policy.html#aepo.mbr.policy.diverse_mbr.compute_dmbr"><code class="docutils literal notranslate"><span class="pre">compute_dmbr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aepo.mbr.policy.html#aepo.mbr.policy.diverse_mbr.gbfs"><code class="docutils literal notranslate"><span class="pre">gbfs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aepo.mbr.policy.html#aepo.mbr.policy.diverse_mbr.generate_objective"><code class="docutils literal notranslate"><span class="pre">generate_objective()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aepo.mbr.policy.html#aepo.mbr.policy.diverse_mbr.local_search"><code class="docutils literal notranslate"><span class="pre">local_search()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aepo.mbr.policy.html#module-aepo.mbr.policy.mbr">aepo.mbr.policy.mbr module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="aepo.mbr.policy.html#aepo.mbr.policy.mbr.compute_mbr"><code class="docutils literal notranslate"><span class="pre">compute_mbr()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="aepo.mbr.policy.html#aepo.mbr.policy.mbr.compute_score_matrix"><code class="docutils literal notranslate"><span class="pre">compute_score_matrix()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="aepo.mbr.policy.html#module-aepo.mbr.policy">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-aepo.mbr.mbr_engine">
+<span id="aepo-mbr-mbr-engine-module"></span><h2>aepo.mbr.mbr_engine module<a class="headerlink" href="#module-aepo.mbr.mbr_engine" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.mbr_engine.run_mbr">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.mbr_engine.</span></span><span class="sig-name descname"><span class="pre">run_mbr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sample_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">matrix_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmbr_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_instructions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_responses</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_matrix_cache</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diverse_k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diversity_penalty</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#aepo.mbr.mbr_engine.run_mbr" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sample_dir</strong> (<em>str</em>) – the directory of the samples.</p></li>
+<li><p><strong>matrix_dir</strong> (<em>str</em>) – the directory of the similarity matrices.</p></li>
+<li><p><strong>dmbr_dir</strong> (<em>str</em>) – the directory of the diverse MBR results.</p></li>
+<li><p><strong>num_instructions</strong> (<em>int</em>) – the number of instructions.</p></li>
+<li><p><strong>num_responses</strong> (<em>int</em>) – the number of responses per instruction.</p></li>
+<li><p><strong>sim</strong> (<em>str</em>) – the similarity model to use.</p></li>
+<li><p><strong>use_matrix_cache</strong> (<em>bool</em>) – the flag to use the matrix cache.</p></li>
+<li><p><strong>diverse_k</strong> (<em>int</em>) – the number responses to select by diverse MBR.</p></li>
+<li><p><strong>diversity_penalty</strong> (<em>float</em>) – the diversity penalty lambda.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the diverse MBR results.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p>Run the diverse MBR algorithm.
+See <a class="reference external" href="https://github.com/CyberAgentAILab/diverse-mbr">https://github.com/CyberAgentAILab/diverse-mbr</a> for more details of diverse MBR.</p>
+</dd></dl>
+
+</section>
+<section id="module-aepo.mbr.reward_engine">
+<span id="aepo-mbr-reward-engine-module"></span><h2>aepo.mbr.reward_engine module<a class="headerlink" href="#module-aepo.mbr.reward_engine" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.reward_engine.run_reward">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_engine.</span></span><span class="sig-name descname"><span class="pre">run_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reward_model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instructions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_instructions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_annotations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">west_of_n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dmbr_result</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#aepo.mbr.reward_engine.run_reward" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reward_model_id</strong> (<em>str</em>) – the Huggingface Hub’s repository name of the reward model.</p></li>
+<li><p><strong>instructions</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – the list of instructions.</p></li>
+<li><p><strong>output_dir</strong> (<em>str</em>) – the output directory.</p></li>
+<li><p><strong>output_filename</strong> (<em>str</em>) – the output filename.</p></li>
+<li><p><strong>num_instructions</strong> (<em>int</em>) – the number of instructions.</p></li>
+<li><p><strong>num_annotations</strong> (<em>int</em>) – the number of annotations available per instruction.</p></li>
+<li><p><strong>west_of_n</strong> (<em>bool</em>) – if true, output the best and worst of N samples instead of all annotated responses.</p></li>
+<li><p><strong>dmbr_result</strong> (<em>pd.DataFrame</em>) – the diverse MBR results.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the annotation-efficient preference optimization dataset.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pd.DataFrame</p>
+</dd>
+</dl>
+<p>Annotate the reward for the responses selected by diverse MBR.</p>
+</dd></dl>
+
+</section>
+<section id="module-aepo.mbr.reward_model">
+<span id="aepo-mbr-reward-model-module"></span><h2>aepo.mbr.reward_model module<a class="headerlink" href="#module-aepo.mbr.reward_model" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.Eurus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_model.</span></span><span class="sig-name descname"><span class="pre">Eurus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reward_model_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.Eurus" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aepo.mbr.reward_model.RewardModel" title="aepo.mbr.reward_model.RewardModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">RewardModel</span></code></a></p>
+<p>Eurus reward model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.Eurus.get_reward">
+<span class="sig-name descname"><span class="pre">get_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.Eurus.get_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.GPTRewardModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_model.</span></span><span class="sig-name descname"><span class="pre">GPTRewardModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.GPTRewardModel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Module</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.GPTRewardModel.forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">past_key_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attention_mask</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_ids</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.GPTRewardModel.forward" title="Link to this definition"></a></dt>
+<dd><p>input_ids, attention_mask: torch.Size([bs, seq_len])
+return: scores: List[bs]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.GPTRewardModel.get_device">
+<span class="sig-name descname"><span class="pre">get_device</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.GPTRewardModel.get_device" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.OASST">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_model.</span></span><span class="sig-name descname"><span class="pre">OASST</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reward_model_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.OASST" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aepo.mbr.reward_model.RewardModel" title="aepo.mbr.reward_model.RewardModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">RewardModel</span></code></a></p>
+<p>OpenAssistant reward model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.OASST.get_reward">
+<span class="sig-name descname"><span class="pre">get_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.OASST.get_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.PairLM">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_model.</span></span><span class="sig-name descname"><span class="pre">PairLM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reward_model_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.PairLM" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aepo.mbr.reward_model.RewardModel" title="aepo.mbr.reward_model.RewardModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">RewardModel</span></code></a></p>
+<p>PairLM reward model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.PairLM.get_pairwise_reward">
+<span class="sig-name descname"><span class="pre">get_pairwise_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compared_answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#aepo.mbr.reward_model.PairLM.get_pairwise_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.PairLM.get_reward">
+<span class="sig-name descname"><span class="pre">get_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.PairLM.get_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.PairLM.get_rewards">
+<span class="sig-name descname"><span class="pre">get_rewards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.PairLM.get_rewards" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.PairLM.get_winratio">
+<span class="sig-name descname"><span class="pre">get_winratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compared_answers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.PairLM.get_winratio" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.PairLM.tokenize_pair">
+<span class="sig-name descname"><span class="pre">tokenize_pair</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">candidate1s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">candidate2s</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1224</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">candidate_max_length</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">412</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.PairLM.tokenize_pair" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.RewardModel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_model.</span></span><span class="sig-name descname"><span class="pre">RewardModel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reward_model_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.RewardModel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for reward models.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.RewardModel.get_pairwise_reward">
+<span class="sig-name descname"><span class="pre">get_pairwise_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compared_answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#aepo.mbr.reward_model.RewardModel.get_pairwise_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.RewardModel.get_pairwise_rewards">
+<span class="sig-name descname"><span class="pre">get_pairwise_rewards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">ndarray</span></span></span><a class="headerlink" href="#aepo.mbr.reward_model.RewardModel.get_pairwise_rewards" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.RewardModel.get_reward">
+<span class="sig-name descname"><span class="pre">get_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#aepo.mbr.reward_model.RewardModel.get_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.RewardModel.get_rewards">
+<span class="sig-name descname"><span class="pre">get_rewards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#aepo.mbr.reward_model.RewardModel.get_rewards" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.StanfordNLP">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_model.</span></span><span class="sig-name descname"><span class="pre">StanfordNLP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reward_model_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.StanfordNLP" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aepo.mbr.reward_model.RewardModel" title="aepo.mbr.reward_model.RewardModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">RewardModel</span></code></a></p>
+<p>StanfordNLP reward model.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.StanfordNLP.get_pairwise_reward">
+<span class="sig-name descname"><span class="pre">get_pairwise_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">compared_answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#aepo.mbr.reward_model.StanfordNLP.get_pairwise_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.StanfordNLP.get_reward">
+<span class="sig-name descname"><span class="pre">get_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.StanfordNLP.get_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.Starling">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_model.</span></span><span class="sig-name descname"><span class="pre">Starling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reward_model_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.Starling" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#aepo.mbr.reward_model.RewardModel" title="aepo.mbr.reward_model.RewardModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">RewardModel</span></code></a></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.Starling.get_reward">
+<span class="sig-name descname"><span class="pre">get_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.Starling.get_reward" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.Starling.get_reward_">
+<span class="sig-name descname"><span class="pre">get_reward_</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.Starling.get_reward_" title="Link to this definition"></a></dt>
+<dd><p>samples: List[str]</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.Starling.get_rewards">
+<span class="sig-name descname"><span class="pre">get_rewards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">question</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answers</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.Starling.get_rewards" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.reward_model.load_reward_model">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.reward_model.</span></span><span class="sig-name descname"><span class="pre">load_reward_model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reward_model_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#aepo.mbr.reward_model.load_reward_model" title="Link to this definition"></a></dt>
+<dd><p>Currently it only supports the following reward models.
+To add a new reward model, implement it in the RewardModel class.</p>
+</dd></dl>
+
+</section>
+<section id="module-aepo.mbr.utility_func">
+<span id="aepo-mbr-utility-func-module"></span><h2>aepo.mbr.utility_func module<a class="headerlink" href="#module-aepo.mbr.utility_func" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="aepo.mbr.utility_func.load_similarity">
+<span class="sig-prename descclassname"><span class="pre">aepo.mbr.utility_func.</span></span><span class="sig-name descname"><span class="pre">load_similarity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sim</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">callable</span></span></span><a class="headerlink" href="#aepo.mbr.utility_func.load_similarity" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sim</strong> (<em>str</em>) – the name of the similarity function to load.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the similarity function.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>callable</p>
+</dd>
+</dl>
+<p>Load the similarity function to be used for diverse MBR.
+For the purpose of AEPO, we use Sentence BERT (sentbert).</p>
+</dd></dl>
+
+</section>
+<section id="module-aepo.mbr">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-aepo.mbr" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yuu Jinnai.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

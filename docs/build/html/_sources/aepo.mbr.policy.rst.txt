@@ -1,0 +1,29 @@
+aepo.mbr.policy package
+=======================
+
+Submodules
+----------
+
+aepo.mbr.policy.diverse\_mbr module
+-----------------------------------
+
+.. automodule:: aepo.mbr.policy.diverse_mbr
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+aepo.mbr.policy.mbr module
+--------------------------
+
+.. automodule:: aepo.mbr.policy.mbr
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: aepo.mbr.policy
+   :members:
+   :undoc-members:
+   :show-inheritance:

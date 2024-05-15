@@ -1,0 +1,53 @@
+aepo.mbr package
+================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   aepo.mbr.policy
+
+Submodules
+----------
+
+aepo.mbr.mbr\_engine module
+---------------------------
+
+.. automodule:: aepo.mbr.mbr_engine
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+aepo.mbr.reward\_engine module
+------------------------------
+
+.. automodule:: aepo.mbr.reward_engine
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+aepo.mbr.reward\_model module
+-----------------------------
+
+.. automodule:: aepo.mbr.reward_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+aepo.mbr.utility\_func module
+-----------------------------
+
+.. automodule:: aepo.mbr.utility_func
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: aepo.mbr
+   :members:
+   :undoc-members:
+   :show-inheritance:

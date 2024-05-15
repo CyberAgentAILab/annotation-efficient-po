@@ -1,0 +1,37 @@
+aepo package
+============
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   aepo.mbr
+
+Submodules
+----------
+
+aepo.cli module
+---------------
+
+.. automodule:: aepo.cli
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+aepo.preprocess module
+----------------------
+
+.. automodule:: aepo.preprocess
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: aepo
+   :members:
+   :undoc-members:
+   :show-inheritance:
