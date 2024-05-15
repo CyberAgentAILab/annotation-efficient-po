@@ -11,10 +11,23 @@ from aepo.mbr.reward_engine import run_reward
 def aepo():
     """
     Args:
-        None
+        --cache_dir: the directory to cache the dataset.
+        --split: the split of the dataset to use.
+        --output: the path of the output file.
+        --num_instructions: the number of instructions.
+        --num_responses: (N) the maximum number of responses per instruction in the dataset.
+        --num_annotations: (k) the number of annotations available per instruction. To generate a pairwise preference dataset, set to 2.
+        --similarity_measure: the similarity measure to use for diverse MBR.
+        --diversity_penalty: the diversity penalty for diverse MBR.
+        --reward_model: the repository name in Huggingface hub of the reward model. Default is OpenAssistant/reward-model-deberta-v3-large-v2
+        --west_of_n: use the west-of-n strategy to generate the preference dataset.
+        --access_token: the read access token for the Huggingface API.
+        --use_sample_cache: use the cached sample dataset.
+        --use_matrix_cache: use the cached similarity matrix.
+        --debug: enable debug mode.
     Returns:
         None
-    The main function for the AEPO command line interface.
+    The command line interface of AEPO.
     """
     parser = argparse.ArgumentParser(
         description="AEPO: A Python package for Annotation Efficient Preference Optimization."

@@ -174,13 +174,34 @@
 <span class="sig-prename descclassname"><span class="pre">aepo.cli.</span></span><span class="sig-name descname"><span class="pre">aepo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#aepo.cli.aepo" title="Link to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>None</strong></p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>--cache_dir</strong> – the directory to cache the dataset.</p></li>
+<li><p><strong>--split</strong> – the split of the dataset to use.</p></li>
+<li><p><strong>--output</strong> – the path of the output file.</p></li>
+<li><p><strong>--num_instructions</strong> – the number of instructions.</p></li>
+<li><p><strong>--num_responses</strong> – <ol class="upperalpha simple" start="14">
+<li><p>the maximum number of responses per instruction in the dataset.</p></li>
+</ol>
+</p></li>
+<li><p><strong>--num_annotations</strong> – <ol class="loweralpha simple" start="11">
+<li><p>the number of annotations available per instruction. To generate a pairwise preference dataset, set to 2.</p></li>
+</ol>
+</p></li>
+<li><p><strong>--similarity_measure</strong> – the similarity measure to use for diverse MBR.</p></li>
+<li><p><strong>--diversity_penalty</strong> – the diversity penalty for diverse MBR.</p></li>
+<li><p><strong>--reward_model</strong> – the repository name in Huggingface hub of the reward model. Default is OpenAssistant/reward-model-deberta-v3-large-v2</p></li>
+<li><p><strong>--west_of_n</strong> – use the west-of-n strategy to generate the preference dataset.</p></li>
+<li><p><strong>--access_token</strong> – the read access token for the Huggingface API.</p></li>
+<li><p><strong>--use_sample_cache</strong> – use the cached sample dataset.</p></li>
+<li><p><strong>--use_matrix_cache</strong> – use the cached similarity matrix.</p></li>
+<li><p><strong>--debug</strong> – enable debug mode.</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>None</p>
 </dd>
 </dl>
-<p>The main function for the AEPO command line interface.</p>
+<p>The command line interface of AEPO.</p>
 </dd></dl>
 
 </section>
