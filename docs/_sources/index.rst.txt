@@ -3,12 +3,46 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to aepo's documentation!
+AEPO
 ================================
+
+`AEPO (Annotation Efficient Preference Optimization) <https://github.com/CyberAgentAILab/annotation-efficient-po>`_ is a Python package for preference dataset preparation.
+It implements a set of functions to generate preference datasets from raw data.
+
+.. image:: aepo.png
+  :width: 500
+  :alt: AEPO logo
+
+Installation
+------------
+You can install AEPO from PyPI using pip.
+Python 3.9 or higher is required.
+
+.. code-block:: bash
+
+    pip install aepo
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Introduction
+
+   quickstart
+
+.. toctree::
+   :maxdepth: 1
+   :caption: API Reference
+
+   aepo
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+
+
+Contact
+--------
+For any questions, feel free to raise an issue or contact me at jinnai_yu@cyberagent.co.jp.
 
 
 Indices and tables

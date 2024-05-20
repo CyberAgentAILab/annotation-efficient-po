@@ -42,71 +42,11 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <!-- Local TOC -->
-              <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">aepo.mbr package</a><ul>
-<li><a class="reference internal" href="#subpackages">Subpackages</a></li>
-<li><a class="reference internal" href="#submodules">Submodules</a></li>
-<li><a class="reference internal" href="#module-aepo.mbr.mbr_engine">aepo.mbr.mbr_engine module</a><ul>
-<li><a class="reference internal" href="#aepo.mbr.mbr_engine.run_mbr"><code class="docutils literal notranslate"><span class="pre">run_mbr()</span></code></a></li>
+              <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#module-aepo.mbr.reward_engine">aepo.mbr.reward_engine module</a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_engine.run_reward"><code class="docutils literal notranslate"><span class="pre">run_reward()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-aepo.mbr.reward_model">aepo.mbr.reward_model module</a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.Eurus"><code class="docutils literal notranslate"><span class="pre">Eurus</span></code></a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.Eurus.get_reward"><code class="docutils literal notranslate"><span class="pre">Eurus.get_reward()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.GPTRewardModel"><code class="docutils literal notranslate"><span class="pre">GPTRewardModel</span></code></a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.GPTRewardModel.forward"><code class="docutils literal notranslate"><span class="pre">GPTRewardModel.forward()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.GPTRewardModel.get_device"><code class="docutils literal notranslate"><span class="pre">GPTRewardModel.get_device()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.OASST"><code class="docutils literal notranslate"><span class="pre">OASST</span></code></a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.OASST.get_reward"><code class="docutils literal notranslate"><span class="pre">OASST.get_reward()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM"><code class="docutils literal notranslate"><span class="pre">PairLM</span></code></a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.get_pairwise_reward"><code class="docutils literal notranslate"><span class="pre">PairLM.get_pairwise_reward()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.get_reward"><code class="docutils literal notranslate"><span class="pre">PairLM.get_reward()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.get_rewards"><code class="docutils literal notranslate"><span class="pre">PairLM.get_rewards()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.get_winratio"><code class="docutils literal notranslate"><span class="pre">PairLM.get_winratio()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.PairLM.tokenize_pair"><code class="docutils literal notranslate"><span class="pre">PairLM.tokenize_pair()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel"><code class="docutils literal notranslate"><span class="pre">RewardModel</span></code></a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel.get_pairwise_reward"><code class="docutils literal notranslate"><span class="pre">RewardModel.get_pairwise_reward()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel.get_pairwise_rewards"><code class="docutils literal notranslate"><span class="pre">RewardModel.get_pairwise_rewards()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel.get_reward"><code class="docutils literal notranslate"><span class="pre">RewardModel.get_reward()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.RewardModel.get_rewards"><code class="docutils literal notranslate"><span class="pre">RewardModel.get_rewards()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.StanfordNLP"><code class="docutils literal notranslate"><span class="pre">StanfordNLP</span></code></a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.StanfordNLP.get_pairwise_reward"><code class="docutils literal notranslate"><span class="pre">StanfordNLP.get_pairwise_reward()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.StanfordNLP.get_reward"><code class="docutils literal notranslate"><span class="pre">StanfordNLP.get_reward()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.Starling"><code class="docutils literal notranslate"><span class="pre">Starling</span></code></a><ul>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.Starling.get_reward"><code class="docutils literal notranslate"><span class="pre">Starling.get_reward()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.Starling.get_reward_"><code class="docutils literal notranslate"><span class="pre">Starling.get_reward_()</span></code></a></li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.Starling.get_rewards"><code class="docutils literal notranslate"><span class="pre">Starling.get_rewards()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#aepo.mbr.reward_model.load_reward_model"><code class="docutils literal notranslate"><span class="pre">load_reward_model()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-aepo.mbr.utility_func">aepo.mbr.utility_func module</a><ul>
-<li><a class="reference internal" href="#aepo.mbr.utility_func.load_similarity"><code class="docutils literal notranslate"><span class="pre">load_similarity()</span></code></a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#module-aepo.mbr">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</div>
+
         </div>
       </div>
     </nav>

@@ -1,0 +1,60 @@
+Quick Start
+===========
+
+Preparing the dataset
+---------------------
+
+A csv file containing the dataset should be prepared. 
+The csv file should contain a column named "prompt" or "instruction" which contains the instruction for the task.
+The rest of the columns should contain the response data.
+
+We have an example dataset at `./dataset/aplaca_samples.csv <https://github.com/CyberAgentAILab/annotation-efficient-po/blob/master/dataset/alpaca_samples.csv>`_.
+
+
+Running AEPO
+------------
+
+AEPO can be run using the following command:
+
+.. code-block:: bash
+
+    aepo [dataset path] --num_responses [number of responses] --num_annotations [Number of annotations] --num_instructions [Number of instructions]
+
+
+where [dataset path] is the path to the csv file or HuggingFace Hub's ID containing the dataset.
+[number of responses] is the number of responses to be considered by AEPO.
+[num_annotations] is the number of annotations available per instruction.
+[num_instructions] is the number of instructions to be considered by AEPO.
+
+For example, to run AEPO on the example dataset with 8 responses, 2 annotations per instruction, and 10 instructions, the following command can be used:
+
+.. code-block:: bash
+
+    aepo ./dataset/alpaca_samples.csv --num_responses 8 --num_annotations 2 --num_instructions 10
+
+The output of the command will be the preference dataset containing two responses for each instruction.
+The annotations will be saved in a csv file named "annotations.csv" in the ./dmbr directory.
+
+
+Running West-of-N
+-----------------
+
+The West-of-N model can be run using the following command:
+
+.. code-block:: bash
+
+    aepo [dataset path] --num_responses [N] --num_annotations [N] --num_instructions [Number of instructions] --west_of_n
+
+where [N] is the number of responses to be considered by West-of-N.
+--num_annotations == --num_responses == [N] should be provided to run West-of-N.
+The output of the command will be the preference dataset containing two resposnes for each instruction.
+--west_of_n should be provided to choose the best and the worst response for each instruction.
+Otherwise, the output of the command will be the preference dataset containing all N responses for each instruction, which may be useful for preference over a list of options (e.g., LiPO).
+
+For example, to run West-of-N on the example dataset with 8 responses, and 10 instructions, the following command can be used:
+
+.. code-block:: bash
+
+    aepo ./dataset/alpaca_samples.csv --num_responses 8 --num_annotations 8 --num_instructions 10 --west_of_n
+
+
