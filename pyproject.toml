@@ -1,8 +1,11 @@
 [tool.poetry]
 name = "aepo"
-version = "0.1.3"
+version = "0.1.4"
 description = "Annotation Efficient Preference Optimization"
 authors = ["Yuu Jinnai <ddyuudd@gmail.com>"]
+readme = "README.md"
+repository = "https://github.com/CyberAgentAILab/annotation-efficient-po"
+documentation = "https://CyberAgentAILab.github.io/annotation-efficient-po"
 
 [tool.poetry.dependencies]
 python = "^3.9"
@@ -24,4 +27,3 @@ aepo = "aepo.cli:aepo"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
-
