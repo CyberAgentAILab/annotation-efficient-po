@@ -10,7 +10,7 @@ AEPO
 It implements a set of functions to generate preference datasets from raw data.
 
 .. image:: aepo.png
-  :width: 500
+  :width: 600
   :alt: AEPO logo
 
 Installation
