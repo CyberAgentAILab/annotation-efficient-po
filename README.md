@@ -72,3 +72,6 @@ TBA. Yuu Jinnai and Honda Ukyo. Annotation-Efficient Preference Optimization for
 
 ## Contact
 For any questions, feel free to raise an issue or contact me at jinnai_yu@cyberagent.co.jp.
+
+## Acknowledgements
+AlpacaFarm dataset is licensed under Attribution-NonCommercial 4.0 International.
