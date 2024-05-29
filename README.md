@@ -90,4 +90,4 @@ Bibtex:
 For any questions, feel free to raise an issue or contact me at jinnai_yu@cyberagent.co.jp.
 
 ## Acknowledgements
-AlpacaFarm dataset is licensed under Attribution-NonCommercial 4.0 International.
+[AlpacaFarm dataset](https://github.com/tatsu-lab/alpaca_farm) is licensed under [Attribution-NonCommercial 4.0 International](https://github.com/tatsu-lab/alpaca_farm/blob/main/DATA_LICENSE).
