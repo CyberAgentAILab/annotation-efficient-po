@@ -1,6 +1,8 @@
 ## Annotation-Efficient Preference Optimization
 
-This repository implements the Annotation-Efficient Preference Optimization (AEPO) algorithm.
+![illustration](aepo.png)
+
+This repository implements the [Annotation-Efficient Preference Optimization (AEPO) algorithm](https://arxiv.org/abs/2405.13541).
 
 The code is tested on Ubuntu 20.04 using Python 3.9 and CUDA 11.0 (Docker image nvidia/cuda:11.0.3-cudnn8-devel-ubuntu20.04).
 
@@ -68,7 +70,21 @@ It would be useful to construct a pairwise preference dataset.
 
 ## Reference
 
-TBA. Yuu Jinnai and Honda Ukyo. Annotation-Efficient Preference Optimization for Language Model Alignment, 2024.
+[Jinnai, Y., Honda, U. (2024). Annotation-Efficient Preference Optimization for Language Model Alignment. arXiv preprint arXiv:2405.13541.](https://arxiv.org/abs/2405.13541)
+
+
+Bibtex:
+
+```
+@misc{jinnai2024annotationefficient,
+      title={Annotation-Efficient Preference Optimization for Language Model Alignment}, 
+      author={Yuu Jinnai and Ukyo Honda},
+      year={2024},
+      eprint={2405.13541},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
 
 ## Contact
 For any questions, feel free to raise an issue or contact me at jinnai_yu@cyberagent.co.jp.
