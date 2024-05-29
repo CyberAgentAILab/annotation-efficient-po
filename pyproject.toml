@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "aepo"
-version = "0.1.4"
+version = "0.1.6"
 description = "Annotation Efficient Preference Optimization"
 authors = ["Yuu Jinnai <ddyuudd@gmail.com>"]
 readme = "README.md"

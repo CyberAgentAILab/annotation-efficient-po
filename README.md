@@ -1,6 +1,6 @@
 ## Annotation-Efficient Preference Optimization
 
-![illustration](aepo.png)
+![illustration](https://github.com/CyberAgentAILab/annotation-efficient-po/raw/master/aepo.png)
 
 This repository implements the [Annotation-Efficient Preference Optimization (AEPO) algorithm](https://arxiv.org/abs/2405.13541).
 
